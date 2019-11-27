@@ -1,5 +1,7 @@
 # Pyan3: Offline call graph generator for Python 3
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7cba5ba5d3694a42a1252243e3634b5e)](https://www.codacy.com/manual/edumco/pyan?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=edumco/pyan&amp;utm_campaign=Badge_Grade)
+
 Generate approximate call graphs for Python programs.
 
 Pyan takes one or more Python source files, performs a (rather superficial) static analysis, and constructs a directed graph of the objects in the combined source, and how they define or use each other. The graph can be output for rendering by GraphViz or yEd.
