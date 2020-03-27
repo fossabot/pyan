@@ -136,7 +136,7 @@ The analyzer **does not currently support**:
 - Async definitions are detected, but passed through to the corresponding non-async analyzers; could be annotated.
 - Cython; could strip or comment out Cython-specific code as a preprocess step, then treat as Python (will need to be careful to get line numbers right).
 
-# How it works
+## How it works
 
 From the viewpoint of graphing the defines and uses relations, the interesting parts of the [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) are bindings (defining new names, or assigning new values to existing names), and any name that appears in an `ast.Load` context (i.e. a use). The latter includes function calls; the function's name then appears in a load context inside the `ast.Call` node that represents the call site.
 
@@ -162,7 +162,7 @@ Of course, this simple approach cannot correctly track cases where the current b
 
 When a binding statement is encountered, the current namespace determines in which scope to store the new value for the name. Similarly, when encountering a use, the current namespace determines which object type or function to tag as the user.
 
-# Authors
+## Authors
 
 Original [pyan.py](https://github.com/ejrh/ejrh/blob/master/utils/pyan.py) by Edmund Horner. [Original post with explanation](http://ejrh.wordpress.com/2012/01/31/call-graphs-in-python-part-2/).
 
@@ -178,6 +178,6 @@ A bug in `.tgf` output [[4]](https://github.com/davidfraser/pyan/pull/4) pointed
 
 This Python 3 port, analyzer expansion, and additional refactoring by Juha Jeronen.
 
-# License
+## License
 
 [GPL v2](LICENSE.md), as per [comments here](https://ejrh.wordpress.com/2012/08/18/coloured-call-graphs/).
