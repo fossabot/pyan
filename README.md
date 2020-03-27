@@ -6,7 +6,7 @@ Generate approximate call graphs for Python programs.
 
 Pyan takes one or more Python source files, performs a (rather superficial) static analysis, and constructs a directed graph of the objects in the combined source, and how they define or use each other. The graph can be output for rendering by GraphViz or yEd.
 
-_And now it is available for Python 3!_
+And now it is available for **Python 3**!
 
 **Note**: This is the repository for the Python 3 version of Pyan. The previous Python 2-compatible version is tagged as `pre-python3` in [davidfraser's maintenance repository](https://github.com/davidfraser/pyan).
 
@@ -30,7 +30,7 @@ The static analysis approach Pyan takes is different from running the code and s
 
 In Pyan3, the analyzer was ported from `compiler` ([good riddance](https://stackoverflow.com/a/909172)) to a combination of `ast` and `symtable`, and slightly extended.
 
-# Usage
+## Usage
 
 See `pyan --help`.
 
@@ -42,7 +42,7 @@ Then render using your favorite GraphViz filter, mainly `dot` or `fdp`:
 
 `dot -Tsvg myuses.dot >myuses.svg`
 
-#### Troubleshooting
+### Troubleshooting
 
 If GraphViz says _trouble in init_rank_, try adding `-Gnewrank=true`, as in:
 
@@ -56,7 +56,7 @@ If the graph is visually unreadable due to too much detail, consider visualizing
 
 Currently Pyan always operates at the level of individual functions and methods; an option to visualize only relations between namespaces may (or may not) be added in a future version.
 
-# Features
+## Features
 
 _Items tagged with ☆ are new in Pyan3._
 
