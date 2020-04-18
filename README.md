@@ -10,7 +10,7 @@ And now it is available for **Python 3**!
 
 **Note**: This is the repository for the Python 3 version of Pyan. The previous Python 2-compatible version is tagged as `pre-python3` in [davidfraser's maintenance repository](https://github.com/davidfraser/pyan).
 
-[![Example output](graph0.png "Example: GraphViz rendering of Pyan output (click for .svg)")](graph0.svg)
+[![Example output](docs/graph0.png "Example: GraphViz rendering of Pyan output (click for .svg)")](docs/graph0.svg)
 
 **Defines** relations are drawn with _dotted gray arrows_.
 
