@@ -1,14 +1,15 @@
-# Pyan3: Offline call graph generator for Python 3
+# Pyan3 [![icon](docs/icon.png)](docs/icon.png)
 
+Offline call graph generator for Python 3
+
+[![Build Status](https://travis-ci.com/edumco/pyan.svg?branch=master)](https://travis-ci.com/edumco/pyan)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7cba5ba5d3694a42a1252243e3634b5e)](https://www.codacy.com/manual/edumco/pyan?utm_source=github.com&utm_medium=referral&utm_content=edumco/pyan&utm_campaign=Badge_Grade)
+
+---
 
 Generate approximate call graphs for Python programs.
 
 Pyan takes one or more Python source files, performs a (rather superficial) static analysis, and constructs a directed graph of the objects in the combined source, and how they define or use each other. The graph can be output for rendering by GraphViz or yEd.
-
-And now it is available for **Python 3**!
-
-**Note**: This is the repository for the Python 3 version of Pyan. The previous Python 2-compatible version is tagged as `pre-python3` in [davidfraser's maintenance repository](https://github.com/davidfraser/pyan).
 
 [![Example output](docs/graph0.png "Example: GraphViz rendering of Pyan output (click for .svg)")](docs/graph0.svg)
 
@@ -177,6 +178,8 @@ A bugfix [[2]](https://github.com/davidfraser/pyan/pull/2) and the option `--dot
 A bug in `.tgf` output [[4]](https://github.com/davidfraser/pyan/pull/4) pointed out and fix suggested by Adam Eijdenberg.
 
 This Python 3 port, analyzer expansion, and additional refactoring by Juha Jeronen.
+
+Icon by [Gopi Doraisamy](https://www.behance.net/gopidoraisamy)
 
 ## License
 
