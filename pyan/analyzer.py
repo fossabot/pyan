@@ -957,17 +957,16 @@ class CallGraphVisitor(ast.NodeVisitor):
                     self.logger.info(msg)
                     raise UnresolvedSuperCallError(msg)
 
-            if funcname in ("str", "repr"):
-                if len(ast_node.args) == 1:  # these take only one argument
-                    obj_astnode = ast_node.args[0]
-                    if isinstance(obj_astnode, (ast.Name, ast.Attribute)):
-                        self.logger.debug("Resolving %s() of %s" % (funcname, get_ast_node_name(obj_astnode)))
-                        attrname = "__%s__" % (funcname)
-                        # build a temporary ast.Attribute AST node so that we can use get_attribute()
-                        tmp_astnode = ast.Attribute(value=obj_astnode, attr=attrname, ctx=obj_astnode.ctx)
-                        obj_node, attr_node = self.get_attribute(tmp_astnode)
-                        self.logger.debug("Resolve %s() of %s: returning attr node %s" % (funcname, get_ast_node_name(obj_astnode), attr_node))
-                        return attr_node
+            if funcname in ("str", "repr") and len(ast_node.args) == 1:    # these take only one argument
+                obj_astnode = ast_node.args[0]
+                if isinstance(obj_astnode, (ast.Name, ast.Attribute)):
+                    self.logger.debug("Resolving %s() of %s" % (funcname, get_ast_node_name(obj_astnode)))
+                    attrname = "__%s__" % (funcname)
+                    # build a temporary ast.Attribute AST node so that we can use get_attribute()
+                    tmp_astnode = ast.Attribute(value=obj_astnode, attr=attrname, ctx=obj_astnode.ctx)
+                    obj_node, attr_node = self.get_attribute(tmp_astnode)
+                    self.logger.debug("Resolve %s() of %s: returning attr node %s" % (funcname, get_ast_node_name(obj_astnode), attr_node))
+                    return attr_node
 
             # add implementations for other built-in funcnames here if needed
 

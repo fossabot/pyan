@@ -161,10 +161,7 @@ class VisualGraph(object):
         visited_nodes.sort(key=lambda x: (x.namespace, x.name))
 
         def find_filenames():
-            filenames = set()
-            for node in visited_nodes:
-                filenames.add(node.filename)
-            return filenames
+            return {node.filename for node in visited_nodes}
         colorizer = Colorizer(num_colors=len(find_filenames()) + 1,
                               colored=colored, logger=logger)
 
