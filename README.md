@@ -32,39 +32,47 @@ dot -T svg myuses.dot > myuses.svg
 
 [![Example output](docs/assets/graph0.png "Example: GraphViz rendering of Pyan output (click for .svg)")](docs/assets/graph0.svg)
 
-> The graphs cand be rendered by [GraphViz](https://pypi.org/project/graphviz/) or [yEd](https://www.yworks.com/products/yed).
+The graph is drawn and organized this way:
 
-**Defines** relations are drawn with _dotted gray arrows_.
+- **Nodes** filled and translucent elipses.
 
-**Uses** relations are drawn with _black solid arrows_. Recursion is indicated by an arrow from a node to itself. [Mutual recursion](https://en.wikipedia.org/wiki/Mutual_recursion#Basic_examples) between nodes X and Y is indicated by a pair of arrows, one pointing from X to Y, and the other from Y to X.
+- **Defines** relations are drawn with _dotted gray arrows_.
 
-**Nodes** are always filled, and made translucent to clearly show any arrows passing underneath them. This is especially useful for large graphs with GraphViz's `fdp` filter. If colored output is not enabled, the fill is white.
+- **Uses** relations are drawn with _black solid arrows_.
 
-In **node coloring**, the [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) color model is used. The **hue** is determined by the _filename_ the node comes from. The **lightness** is determined by _depth of namespace nesting_, with darker meaning more deeply nested. Saturation is constant. The spacing between different hues depends on the number of files analyzed; better results are obtained for fewer files.
+- **Recursion** is indicated by an arrow from a node to itself.
 
-**Groups** are filled with translucent gray to avoid clashes with any node color.
+- **[Mutual recursion](https://en.wikipedia.org/wiki/Mutual_recursion#Basic_examples)** a pair of arrows pointing each other.
 
-The nodes can be **annotated** by _filename and source line number_ information.
+- **Colors** uses the [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) color model like:
+
+  - **hue** shows the _filename_ the node comes from.
+  - **lightness** shows the _depth of namespace nesting_ (darker is deeper).
+  - **saturation** is constant.
+
+- **Groups** are filled with translucent gray to avoid clashes with any node color.
+
+- **Annotations** with _filename and source line number_ can be added to nodes.
 
 > The static analysis approach Pyan3 takes is different from running the code and seeing which functions are called and how often. There are various tools that will generate a call graph that way, usually using a debugger or profiling trace hooks, such as [Python Call Graph](https://pycallgraph.readthedocs.org/).
 
 ## Authors
 
-Original [pyan.py](https://github.com/ejrh/ejrh/blob/master/utils/pyan.py) by Edmund Horner. [Original post with explanation](http://ejrh.wordpress.com/2012/01/31/call-graphs-in-python-part-2/).
+- Original [pyan.py](https://github.com/ejrh/ejrh/blob/master/utils/pyan.py) by Edmund Horner. [Original post with explanation](http://ejrh.wordpress.com/2012/01/31/call-graphs-in-python-part-2/).
 
-[Coloring and grouping](https://ejrh.wordpress.com/2012/08/18/coloured-call-graphs/) for GraphViz output by Juha Jeronen.
+- [Coloring and grouping](https://ejrh.wordpress.com/2012/08/18/coloured-call-graphs/) for GraphViz output by Juha Jeronen.
 
-[Git repository cleanup](https://github.com/davidfraser/pyan/) and maintenance by David Fraser.
+- [Git repository cleanup](https://github.com/davidfraser/pyan/) and maintenance by David Fraser.
 
-[yEd GraphML output, and framework for easily adding new output formats](https://github.com/davidfraser/pyan/pull/1) by Patrick Massot.
+- [yEd GraphML output, and framework for easily adding new output formats](https://github.com/davidfraser/pyan/pull/1) by Patrick Massot.
 
-A bugfix [[2]](https://github.com/davidfraser/pyan/pull/2) and the option `--dot-rankdir` [[3]](https://github.com/davidfraser/pyan/pull/3) contributed by GitHub user ch41rmn.
+- A bugfix [[2]](https://github.com/davidfraser/pyan/pull/2) and the option `--dot-rankdir` [[3]](https://github.com/davidfraser/pyan/pull/3) contributed by GitHub user ch41rmn.
 
-A bug in `.tgf` output [[4]](https://github.com/davidfraser/pyan/pull/4) pointed out and fix suggested by Adam Eijdenberg.
+- A bug in `.tgf` output [[4]](https://github.com/davidfraser/pyan/pull/4) pointed out and fix suggested by Adam Eijdenberg.
 
-This Python 3 port, analyzer expansion, and additional refactoring by Juha Jeronen.
+- This Python 3 port, analyzer expansion, and additional refactoring by Juha Jeronen.
 
-Icon by [Gopi Doraisamy](https://www.behance.net/gopidoraisamy)
+- Icon by [Gopi Doraisamy](https://www.behance.net/gopidoraisamy)
 
 ## License
 
