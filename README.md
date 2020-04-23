@@ -8,7 +8,7 @@ Offline call graph generator for Python 3
 
 Pyan takes one or more Python source files and constructs a directed graph of the objects in the combined source, and how they define or use each other.
 
-[![Example output](docs/graph0.png "Example: GraphViz rendering of Pyan output (click for .svg)")](docs/graph0.svg)
+[![Example output](docs/assets/graph0.png "Example: GraphViz rendering of Pyan output (click for .svg)")](docs/assets/graph0.svg)
 
 > The graphs are rendered by [GraphViz](https://pypi.org/project/graphviz/) or [yEd](https://www.yworks.com/products/yed).
 
