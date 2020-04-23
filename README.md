@@ -21,13 +21,13 @@ pip install pyan3
 All you need is to pass a python file or several files by passing an wildcard (\*)
 
 ```bash
-pyan3 *.py > myuses.dot
+pyan3 *.py --dot > myuses.dot
 ```
 
 Then render using your favorite GraphViz filter, mainly `dot` or `fdp`:
 
 ```bash
-dot -Tsvg myuses.dot > myuses.svg
+dot -T svg myuses.dot > myuses.svg
 ```
 
 [![Example output](docs/assets/graph0.png "Example: GraphViz rendering of Pyan output (click for .svg)")](docs/assets/graph0.svg)
