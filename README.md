@@ -8,9 +8,31 @@ Offline call graph generator for Python 3
 
 Pyan takes one or more Python source files and constructs a directed graph of the objects in the combined source, and how they define or use each other.
 
+## Install
+
+Install pyan3 using pip on Python > 3.6.
+
+```bash
+pip install pyan3
+```
+
+## Usage
+
+All you need is to pass a python file or several files by passing an wildcard (\*)
+
+```bash
+pyan3 *.py > myuses.dot`
+```
+
+Then render using your favorite GraphViz filter, mainly `dot` or `fdp`:
+
+```bash
+dot -Tsvg myuses.dot > myuses.svg
+```
+
 [![Example output](docs/assets/graph0.png "Example: GraphViz rendering of Pyan output (click for .svg)")](docs/assets/graph0.svg)
 
-> The graphs are rendered by [GraphViz](https://pypi.org/project/graphviz/) or [yEd](https://www.yworks.com/products/yed).
+> The graphs cand be rendered by [GraphViz](https://pypi.org/project/graphviz/) or [yEd](https://www.yworks.com/products/yed).
 
 **Defines** relations are drawn with _dotted gray arrows_.
 
@@ -24,35 +46,7 @@ In **node coloring**, the [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) color
 
 The nodes can be **annotated** by _filename and source line number_ information.
 
-## Note
-
-The static analysis approach Pyan takes is different from running the code and seeing which functions are called and how often. There are various tools that will generate a call graph that way, usually using a debugger or profiling trace hooks, such as [Python Call Graph](https://pycallgraph.readthedocs.org/).
-
-In Pyan3, the analyzer was ported from `compiler` ([good riddance](https://stackoverflow.com/a/909172)) to a combination of `ast` and `symtable`, and slightly extended.
-
-## Usage
-
-Example:
-
-`pyan3 *.py --uses --no-defines --colored --grouped --annotated --dot >myuses.dot`
-
-Then render using your favorite GraphViz filter, mainly `dot` or `fdp`:
-
-`dot -Tsvg myuses.dot >myuses.svg`
-
-### Troubleshooting
-
-If GraphViz says _trouble in init_rank_, try adding `-Gnewrank=true`, as in:
-
-`dot -Gnewrank=true -Tsvg myuses.dot >myuses.svg`
-
-Usually either old or new rank (but often not both) works; this is a long-standing GraphViz issue with complex graphs.
-
-### Reducing details
-
-If the graph is visually unreadable due to too much detail, consider visualizing only a subset of the files in your project. Any references to files outside the analyzed set will be considered as undefined, and will not be drawn.
-
-Currently Pyan always operates at the level of individual functions and methods; an option to visualize only relations between namespaces may (or may not) be added in a future version.
+> The static analysis approach Pyan3 takes is different from running the code and seeing which functions are called and how often. There are various tools that will generate a call graph that way, usually using a debugger or profiling trace hooks, such as [Python Call Graph](https://pycallgraph.readthedocs.org/).
 
 ## Authors
 
