@@ -10,7 +10,7 @@ Pyan takes one or more Python source files and constructs a directed graph of th
 
 ## Install
 
-Install pyan3 using pip on Python > 3.6.
+Install pyan3 using pip on Python 3.6
 
 ```bash
 pip install pyan3
@@ -21,7 +21,7 @@ pip install pyan3
 All you need is to pass a python file or several files by passing an wildcard (\*)
 
 ```bash
-pyan3 *.py > myuses.dot`
+pyan3 *.py > myuses.dot
 ```
 
 Then render using your favorite GraphViz filter, mainly `dot` or `fdp`:
