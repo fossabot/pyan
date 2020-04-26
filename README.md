@@ -1,4 +1,5 @@
 # Pyan3 [![icon](docs/assets/icon.png)](docs/assets/icon.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fedumco%2Fpyan.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fedumco%2Fpyan?ref=badge_shield)
 
 Offline call graph generator for Python 3
 
@@ -77,3 +78,6 @@ The graph is drawn and organized this way:
 ## License
 
 [GPL v2](LICENSE.md), as per [comments here](https://ejrh.wordpress.com/2012/08/18/coloured-call-graphs/).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fedumco%2Fpyan.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fedumco%2Fpyan?ref=badge_large)
